@@ -24,8 +24,7 @@ git clone https://github.com/seu-usuario/seu-repositorio.git
 
 2. Criar Ambiente Virtual
 No diretório do projeto, crie e ative um ambiente virtual Python:
-
-  ```    
+   
 
   ```
     python -m venv venv
@@ -36,7 +35,7 @@ No diretório do projeto, crie e ative um ambiente virtual Python:
 3. Instalar Dependências
 Instale as dependências listadas no arquivo requirements.txt:
 
-  ```
+  
   ```
     pip install -r requirements.txt
     Caso você não tenha o requirements.txt ainda, você pode criar um assim:
@@ -48,37 +47,36 @@ Instale as dependências listadas no arquivo requirements.txt:
 Acesse o ThingSpeak e crie uma conta.
 Crie um canal para monitorar os dados de estoque.
 Anote as API keys fornecidas pelo ThingSpeak, pois você precisará delas no código.
-```
+
 ```
     Configuração
 
     1. Configurar a API do ThingSpeak
     No arquivo main.py, insira suas chaves da API do ThingSpeak:
 
-    python
+  
     THINGSPEAK_WRITE_API_KEY = 'SUA_WRITE_API_KEY'
     THINGSPEAK_CHANNEL_ID = 'SEU_CHANNEL_ID'
     2. Configurar Envio de Email
     Ainda no main.py, configure as credenciais de email para enviar notificações quando o estoque estiver baixo:
 
-    python
-
     remetente = 'seuemail@gmail.com'
     destinatario = 'destinatario@gmail.com'
     senha = 'sua_senha'
     Para usar o Gmail, você pode precisar ativar a opção "Acesso a aplicativos menos seguros" na sua conta do Google ou configurar uma senha de aplicativo se estiver usando a autenticação em duas etapas.
-
+```
   Uso
   1. Executar o Script
   Execute o arquivo main.py para iniciar o monitoramento e o envio de dados para o ThingSpeak:
+  
   ```
-  ```
-        python main.py
+     python main.py
+  ```   
   2. Monitoramento
   O script envia dados para o ThingSpeak, atualizando as quantidades de esmaltes e produtos no estoque.
   Quando o estoque estiver abaixo de um nível específico, um email de alerta será enviado automaticamente.
   Estrutura do Projeto
-```
+
 ```
     middleware-iot-estoque/
     │
@@ -90,3 +88,4 @@ Anote as API keys fornecidas pelo ThingSpeak, pois você precisará delas no có
     Personalização
     Intervalo de tempo: Modifique o intervalo de tempo para o monitoramento contínuo, se necessário.
     Níveis de estoque: Altere os valores que disparam as notificações de estoque baixo dentro da função monitorar_estoque().
+```
