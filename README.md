@@ -27,10 +27,11 @@ No diretório do projeto, crie e ative um ambiente virtual Python:
    
 
   ```
-    python -m venv venv
-    Ativando:
-    No Windows - .\venv\Scripts\activate
-    No Linux/Mac - source venv/bin/activate
+      python -m venv venv
+      Ativando:
+      No Windows - .\venv\Scripts\activate
+      No Linux/Mac - source venv/bin/activate
+  ```
 
 3. Instalar Dependências
 Instale as dependências listadas no arquivo requirements.txt:
@@ -41,7 +42,7 @@ Instale as dependências listadas no arquivo requirements.txt:
     Caso você não tenha o requirements.txt ainda, você pode criar um assim:
     pip install requests paho-mqtt
     pip freeze > requirements.txt
-
+  ```
 
 4. Criar Conta no ThingSpeak
 Acesse o ThingSpeak e crie uma conta.
