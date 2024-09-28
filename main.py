@@ -1,6 +1,5 @@
 import requests
-import smtplib
-from email.mime.text import MIMEText
+from notificacao import enviar_notificacao_email
 
 # Dados do ThingSpeak
 THINGSPEAK_WRITE_API_KEY = 'SUA_WRITE_API_KEY'
@@ -18,32 +17,20 @@ def enviar_dados_estoque(qtd_esmaltes, qtd_produtos):
     except Exception as e:
         print(f"Erro ao conectar com ThingSpeak: {e}")
 
-# Função para enviar notificação por email
-def enviar_notificacao_email(mensagem):
-    remetente = 'email_remetente@gmail.com'
-    destinatario = 'destinatario@gmail.com'
-    senha = 'senha_do_email_remetente'
-
-    msg = MIMEText(mensagem)
-    msg['Subject'] = 'Alerta de Estoque Baixo'
-    msg['From'] = remetente
-    msg['To'] = destinatario
-
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-        server.login(remetente, senha)
-        server.sendmail(remetente, destinatario, msg.as_string())
-
 # Função de monitoramento e notificação
 def monitorar_estoque():
-    qtd_esmaltes = 10  # Exemplo de quantidade
-    qtd_produtos = 5   # Exemplo de quantidade
+    qtd_esmaltes = 10  
+    qtd_acetona = 7   
+    qtd_algodao = 5
 
-    enviar_dados_estoque(qtd_esmaltes, qtd_produtos)
+    enviar_dados_estoque(qtd_esmaltes, qtd_acetona,qtd_algodao )
 
     if qtd_esmaltes < 5:
         enviar_notificacao_email("Alerta: Estoque de esmaltes baixo!")
-    if qtd_produtos < 3:
-        enviar_notificacao_email("Alerta: Estoque de produtos baixo!")
+    if qtd_acetona < 3:
+        enviar_notificacao_email("Alerta: Estoque de acetona baixo!")
+    if qtd_algodao < 2:
+        enviar_notificacao_email("Alerta: Estoque de algodão baixo!")
 
 if __name__ == "__main__":
     monitorar_estoque()
