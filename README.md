@@ -20,8 +20,9 @@ As bibliotecas a seguir são necessárias para executar o projeto:
 Instalação
 1. Clonar o Repositório
 Clone este repositório na sua máquina local:
-git clone https://github.com/seu-usuario/seu-repositorio.git
-
+```
+    git clone https://github.com/seu-usuario/seu-repositorio.git
+```
 2. Criar Ambiente Virtual
 No diretório do projeto, crie e ative um ambiente virtual Python:
    
