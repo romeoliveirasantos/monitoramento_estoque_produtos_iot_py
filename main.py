@@ -7,9 +7,9 @@ THINGSPEAK_CHANNEL_ID = 'SEU_CHANNEL_ID'
 THINGSPEAK_URL = f'https://api.thingspeak.com/update?api_key={THINGSPEAK_WRITE_API_KEY}'
 
 # Função para enviar dados do estoque para o ThingSpeak
-def enviar_dados_estoque(qtd_esmaltes, qtd_produtos):
+def enviar_dados_estoque(qtd_esmaltes, qtd_acetona,qtd_algodao):
     try:
-        response = requests.get(f"{THINGSPEAK_URL}&field1={qtd_esmaltes}&field2={qtd_produtos}")
+        response = requests.get(f"{THINGSPEAK_URL}&field1={qtd_esmaltes}&field2={qtd_acetona}&field3={qtd_algodao}")
         if response.status_code == 200:
             print("Dados enviados com sucesso!")
         else:
